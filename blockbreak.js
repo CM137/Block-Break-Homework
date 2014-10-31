@@ -72,8 +72,16 @@ $(function() {
 			p.y = 0;
 			p.dy = 1;
 		  } else if(p.y > Q.height) { 
-			Q.stageScene('loseGame');
-		  }
+		  	if (Q.state.get("lives") == 0) {
+				Q.stageScene('loseGame');
+			}
+			else {
+				Q.state.dec("lives", 1);
+				p.y = Q.height / 2 - this.p.h;
+				p.x = Q.width / 2 + this.p.w / 2
+				p.dx = 1;
+				p.dy = -1;
+  		    }
 	  });
     },
 	
@@ -85,6 +93,7 @@ $(function() {
 		} else if (col.obj.isA("Block")) {
 //			alert("collision with block");
 			Q.audio.play('block.wav');
+			Q.state.inc("score", 100);
 			col.obj.destroy();
 			this.p.dy *= -1;
 			Q.stage().trigger('removeBlock');
@@ -102,6 +111,38 @@ $(function() {
       });
     }
   });
+  
+  Q.UI.Text.extend("Score",{ 
+  init: function(p) {
+    this._super({
+      label: "Score: 0",
+      x: 0,
+      y: 10
+    });
+
+    Q.state.on("change.score",this,"score");
+  },
+
+  score: function(score) {
+    this.p.label = "Score: " + score;
+  }
+  });
+  
+  Q.UI.Text.extend("Lives",{ 
+  init: function(p) {
+    this._super({
+      label: "Lives: 3",
+      x: Q.width - 10,
+      y: 10
+    });
+
+    Q.state.on("change.lives",this,"lives");
+  },
+
+  score: function(score) {
+    this.p.label = "Lives: " + lives;
+  }
+  });
 
 //  Q.load(['blockbreak.png','blockbreak.json'], function() {
   Q.load(['blockbreak.png', 'block.wav', 'paddle.wav', 'wall.wav'], function() {
@@ -111,8 +152,11 @@ $(function() {
 	Q.sheet("paddle", "blockbreak.png", { tilew: 60, tileh: 20, sy: 40, sx: 0 });
 			 		 
     Q.scene('game',new Q.Scene(function(stage) {
+      Q.state.reset({ score: 0, lives: 3 });
       stage.insert(new Q.Paddle());
       stage.insert(new Q.Ball());
+      stage.insert(new Q.Score());
+      stage.insert(new Q.Lives());
 
       var blockCount=0;
       for(var x=0;x<6;x++) {
