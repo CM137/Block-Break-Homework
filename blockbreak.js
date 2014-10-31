@@ -126,7 +126,7 @@ $(function() {
   },
 
   score: function(score) {
-    this.p.label = "Score: " + Q.state.get("score");
+    this.p.label = "Score: " + score;
   }
   });
   
@@ -157,7 +157,7 @@ $(function() {
 	Q.state.set("lives", 3);
 				 		 
     Q.scene('game',new Q.Scene(function(stage) {
-      Q.reset({ score: 0, lives: 3 });
+      Q.state.reset({ score: 0, lives: 3 });
       stage.insert(new Q.Paddle());
       stage.insert(new Q.Ball());
       stage.insert(new Q.Score());
