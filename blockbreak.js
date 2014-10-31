@@ -126,7 +126,7 @@ $(function() {
   },
 
   score: function(score) {
-    this.p.label = "Score: " + score;
+    this.p.label = "Score: " + Q.state.get("score");
   }
   });
   
