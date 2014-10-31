@@ -58,14 +58,17 @@ $(function() {
 		  p.y += p.dy * p.speed * dt;
 
 		  if(p.x < 0) { 
+		  	Q.audio.play('wall.wav');
 			p.x = 0;
 			p.dx = 1;
 		  } else if(p.x > Q.width - p.w) { 
+		  	Q.audio.play('wall.wav');
 			p.dx = -1;
 			p.x = Q.width - p.w;
 		  }
 
 		  if(p.y < 0) {
+		  	Q.audio.play('wall.wav');
 			p.y = 0;
 			p.dy = 1;
 		  } else if(p.y > Q.height) { 
@@ -81,6 +84,7 @@ $(function() {
 			this.p.dy = -1;
 		} else if (col.obj.isA("Block")) {
 //			alert("collision with block");
+			Q.audio.play('block.wav');
 			col.obj.destroy();
 			this.p.dy *= -1;
 			Q.stage().trigger('removeBlock');
