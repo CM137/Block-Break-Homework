@@ -118,7 +118,7 @@ $(function() {
     this._super({
       label: "Score: 0",
       x: 0,
-      y: Q.height - 10,
+      y: 10,
       color: "white"
     });
 
@@ -142,7 +142,7 @@ $(function() {
     Q.state.on("change.lives",this,"lives");
   },
 
-  score: function(score) {
+  lives: function(lives) {
     this.p.label = "Lives: " + lives;
   }
   });
