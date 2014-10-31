@@ -94,7 +94,7 @@ $(function() {
 		} else if (col.obj.isA("Block")) {
 //			alert("collision with block");
 			Q.audio.play('block.wav');
-			Q.inc("score", 100);
+			Q.state.inc("score", 100);
 			col.obj.destroy();
 			this.p.dy *= -1;
 			Q.stage().trigger('removeBlock');
