@@ -81,6 +81,7 @@ $(function() {
 				p.x = Q.width / 2 + this.p.w / 2
 				p.dx = 1;
 				p.dy = -1;
+			}
   		    }
 	  });
     },
