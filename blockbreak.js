@@ -72,7 +72,7 @@ $(function() {
 			p.y = 0;
 			p.dy = 1;
 		  } else if(p.y > Q.height) { 
-		  	if (Q.state.get("lives") == 0) {
+		  	if (Q.get("lives") == 0) {
 				Q.stageScene('loseGame');
 			}
 			else {
@@ -94,7 +94,7 @@ $(function() {
 		} else if (col.obj.isA("Block")) {
 //			alert("collision with block");
 			Q.audio.play('block.wav');
-			Q.state.inc("score", 100);
+			Q.inc("score", 100);
 			col.obj.destroy();
 			this.p.dy *= -1;
 			Q.stage().trigger('removeBlock');
@@ -118,7 +118,8 @@ $(function() {
     this._super({
       label: "Score: 0",
       x: 0,
-      y: 10
+      y: Q.height - 10,
+      color: "white"
     });
 
     Q.state.on("change.score",this,"score");
@@ -134,7 +135,8 @@ $(function() {
     this._super({
       label: "Lives: 3",
       x: Q.width - 10,
-      y: 10
+      y: 10,
+      color: "white"
     });
 
     Q.state.on("change.lives",this,"lives");
