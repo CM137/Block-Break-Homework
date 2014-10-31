@@ -151,9 +151,11 @@ $(function() {
 	Q.sheet("ball", "blockbreak.png", { tilew: 20, tileh: 20, sy: 0, sx: 0 });
 	Q.sheet("block", "blockbreak.png", { tilew: 40, tileh: 20, sy: 20, sx: 0 });
 	Q.sheet("paddle", "blockbreak.png", { tilew: 60, tileh: 20, sy: 40, sx: 0 });
-			 		 
+	Q.state.set("score", 0);
+	Q.state.set("lives", 3);
+				 		 
     Q.scene('game',new Q.Scene(function(stage) {
-      Q.state.reset({ score: 0, lives: 3 });
+      Q.reset({ score: 0, lives: 3 });
       stage.insert(new Q.Paddle());
       stage.insert(new Q.Ball());
       stage.insert(new Q.Score());
