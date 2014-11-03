@@ -1,5 +1,5 @@
 $(function() {
-  var Q = window.Q = Quintus({ audioSupported: ['wav'] })
+  var Q = window.Q = Quintus({ audioSupported: ['mp3', 'wav'] })
                      .include('Input,Sprites,Scenes,UI,Touch,Audio')
                      .setup().touch().enableSound();
 
