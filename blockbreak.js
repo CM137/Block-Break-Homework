@@ -204,19 +204,19 @@ $(function() {
    				 x: Q.width/2, y: 0, fill: "rgba(0,0,0,0.5)"
   		}));
 
-  		var button = container.insert(new Q.UI.Button({ x: 0, y: 85, fill: "#FFFFFF",
+  		var button = container.insert(new Q.UI.Button({ x: 0, y: 220, fill: "#FFFFFF",
                                                   label: "Play" },function() {
     	Q.clearStages();
    		Q.stageScene('game');
   		}));  
          
-  		var label = container.insert(new Q.UI.Text({x: 0, y: 5, color: "white",
+  		var label = container.insert(new Q.UI.Text({x: -10, y: 30, color: "white",
                             label: "    Block Break", size: 48 }));
-        var label1 = container.insert(new Q.UI.Text({x: 0, y: 60, color: "white",
+        var label1 = container.insert(new Q.UI.Text({x: -10, y: 105, color: "white",
                             label: "     Controls", size: 32 }));
-        var label2 = container.insert(new Q.UI.Text({x: 0, y: 65, color: "white",
+        var label2 = container.insert(new Q.UI.Text({x: -10, y: 135, color: "white",
                             label: "    Move Mouse", size: 18 }));
-        var label3 = container.insert(new Q.UI.Text({x: 0, y: 75, color: "white",
+        var label3 = container.insert(new Q.UI.Text({x: -10, y: 155, color: "white",
                             label: "Mobile: Touch Screen", size:18 }));
 
 		stage.insert(new Q.Pointer());
