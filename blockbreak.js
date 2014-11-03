@@ -3,11 +3,7 @@ $(function() {
                      .include('Input,Sprites,Scenes,UI,Touch,Audio')
                      .setup().touch().enableSound();
 
-  Q.input.keyboardControls();
   Q.input.mouseControls();
-  Q.input.touchControls({ 
-            controls:  [ ['left','<' ],[],[],[],['right','>' ] ]
-  });
 
   Q.Sprite.extend("Paddle", {     // extend Sprite class to create Q.Paddle subclass
     init: function(p) {
@@ -18,18 +14,10 @@ $(function() {
       });
       this.p.x = Q.width/2 - this.p.w/2;
       this.p.y = Q.height - this.p.h;
-      if(Q.input.keypad.size) {
-        this.p.y -= Q.input.keypad.size + this.p.h;
-      }
     },
 
     step: function(dt) {
       this.p.x = Q.inputs['mouseX'];
-      if(Q.inputs['left']) { 
-        this.p.x -= dt * this.p.speed;
-      } else if(Q.inputs['right']) {
-        this.p.x += dt * this.p.speed;
-      }
       if(this.p.x < this.p.w/2) { 
         this.p.x = this.p.w/2;
       } else if(this.p.x > Q.width - this.p.w/2) { 
