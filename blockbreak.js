@@ -115,6 +115,33 @@ $(function() {
     }
   });
   
+  Q.Sprite.extend("Pointer", {     // extend Sprite class to create Q.Paddle subclass
+    init: function(p) {
+      this._super(p, {
+        sheet: 'pointer',
+        x: 0
+      });
+      this.p.x = -5;
+      this.p.y = -5;
+    },
+
+    step: function(dt) {
+      this.p.x = Q.inputs['mouseX'];
+      this.p.y = Q.inputs['mouseY'];
+      if(Q.inputs['left']) { 
+        this.p.x -= dt * this.p.speed;
+      } else if(Q.inputs['right']) {
+        this.p.x += dt * this.p.speed;
+      }
+      if(this.p.x < this.p.w/2) { 
+        this.p.x = this.p.w/2;
+      } else if(this.p.x > Q.width - this.p.w/2) { 
+        this.p.x = Q.width - this.p.w/2;
+      }
+//      this._super(dt);	      // no need for this call anymore
+    }
+  });
+  
   Q.UI.Text.extend("Score",{ 
   init: function(p) {
     this._super({
@@ -157,6 +184,7 @@ $(function() {
 	Q.sheet("ball", "blockbreak.png", { tilew: 20, tileh: 20, sy: 0, sx: 0 });
 	Q.sheet("block", "blockbreak.png", { tilew: 40, tileh: 20, sy: 20, sx: 0 });
 	Q.sheet("paddle", "blockbreak.png", { tilew: 60, tileh: 20, sy: 40, sx: 0 });
+	Q.sheet("pointer", "blockbreak.png", {tilew: 14, tileh: 24, sy: 0, sx: 106});
 	Q.state.set("score", 0);
 	Q.state.set("lives", 3);
 				 		 
@@ -166,6 +194,7 @@ $(function() {
       stage.insert(new Q.Ball());
       stage.insert(new Q.Score());
       stage.insert(new Q.Lives());
+      stage.insert(new Q.Pointer());
 
       var blockCount=0;
       for(var x=0;x<6;x++) {
@@ -184,6 +213,7 @@ $(function() {
     }));
 	
 	Q.scene('title',function(stage) {
+		stage.insert(new Q.Pointer());
   		var container = stage.insert(new Q.UI.Container({
    				 x: Q.width/2, y: Q.height/2, fill: "rgba(0,0,0,0.5)"
   		}));
@@ -201,6 +231,7 @@ $(function() {
   	});
 	
 	Q.scene('loseGame',function(stage) {
+		stage.insert(new Q.Pointer());
   		var container = stage.insert(new Q.UI.Container({
    				 x: Q.width/2, y: Q.height/2, fill: "rgba(0,0,0,0.5)"
   		}));
@@ -218,6 +249,7 @@ $(function() {
   	});
 	
 	Q.scene('winGame',function(stage) {
+		stage.insert(new Q.Pointer());
   		var container = stage.insert(new Q.UI.Container({
    				 x: Q.width/2, y: Q.height/2, fill: "rgba(0,0,0,0.5)"
   		}));
