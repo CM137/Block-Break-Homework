@@ -61,15 +61,15 @@ $(function() {
 		  	Q.audio.play('wall.wav');
 			p.x = 5;
 			p.dx = 1;
-		  } else if(p.x > Q.width - 5) { 
+		  } else if(p.x > Q.width - 10) { 
 		  	Q.audio.play('wall.wav');
 			p.dx = -1;
-			p.x = Q.width - 5;
+			p.x = Q.width - 10;
 		  }
 
-		  if(p.y < 0) {
+		  if(p.y < 10) {
 		  	Q.audio.play('wall.wav');
-			p.y = 0;
+			p.y = 10;
 			p.dy = 1;
 		  } else if(p.y > Q.height) { 
 		  	if (Q.state.get("lives") == 0) {
