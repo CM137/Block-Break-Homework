@@ -1,7 +1,7 @@
 $(function() {
   var Q = window.Q = Quintus({ audioSupported: ['wav'] })
                      .include('Input,Sprites,Scenes,UI,Touch,Audio')
-                     .setup({ padding-top: 40px}).touch().enableSound();
+                     .setup().touch().enableSound();
 
   Q.input.keyboardControls();
   Q.input.touchControls({ 
