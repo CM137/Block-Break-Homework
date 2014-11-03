@@ -121,8 +121,8 @@ $(function() {
         sheet: 'pointer',
         x: 0
       });
-      this.p.x = -5;
-      this.p.y = -5;
+      this.p.x = -20;
+      this.p.y = 0;
     },
 
     step: function(dt) {
@@ -134,9 +134,9 @@ $(function() {
         this.p.x += dt * this.p.speed;
       }
       if(this.p.x < this.p.w/2) { 
-        this.p.x = this.p.w/2;
+        this.p.x = -20;
       } else if(this.p.x > Q.width - this.p.w/2) { 
-        this.p.x = Q.width - this.p.w/2;
+        this.p.x = -20;
       }
 //      this._super(dt);	      // no need for this call anymore
     }
@@ -213,7 +213,6 @@ $(function() {
     }));
 	
 	Q.scene('title',function(stage) {
-		stage.insert(new Q.Pointer());
   		var container = stage.insert(new Q.UI.Container({
    				 x: Q.width/2, y: Q.height/2, fill: "rgba(0,0,0,0.5)"
   		}));
@@ -227,11 +226,11 @@ $(function() {
   		var label = container.insert(new Q.UI.Text({x: 0, y: -30, color: "white",
                             label: "      Block Break\n\n         Controls\nLeft    -  Left Arrow\nRight  -  Right Arrow\n" }));
 
+		stage.insert(new Q.Pointer());
   		container.fit(20);
   	});
 	
 	Q.scene('loseGame',function(stage) {
-		stage.insert(new Q.Pointer());
   		var container = stage.insert(new Q.UI.Container({
    				 x: Q.width/2, y: Q.height/2, fill: "rgba(0,0,0,0.5)"
   		}));
@@ -245,11 +244,11 @@ $(function() {
   		var label = container.insert(new Q.UI.Text({x: 0, y: -40, color: "white",
                             label: "You Lose!" }));
 
+		stage.insert(new Q.Pointer());
   		container.fit(20);
   	});
 	
 	Q.scene('winGame',function(stage) {
-		stage.insert(new Q.Pointer());
   		var container = stage.insert(new Q.UI.Container({
    				 x: Q.width/2, y: Q.height/2, fill: "rgba(0,0,0,0.5)"
   		}));
@@ -263,6 +262,7 @@ $(function() {
   		var label = container.insert(new Q.UI.Text({x: 0, y: -40, color: "white",
                             label: "You Win!" }));
 
+		stage.insert(new Q.Pointer());
   		container.fit(20);
   	});
 	
