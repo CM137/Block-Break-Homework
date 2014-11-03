@@ -182,7 +182,6 @@ $(function() {
       stage.insert(new Q.Ball());
       stage.insert(new Q.Score());
       stage.insert(new Q.Lives());
-      stage.insert(new Q.Pointer());
 
       var blockCount=0;
       for(var x=0;x<6;x++) {
@@ -212,7 +211,7 @@ $(function() {
   		}));  
          
   		var label = container.insert(new Q.UI.Text({x: 0, y: -30, color: "white",
-                            label: "      Block Break\n\n         Controls\nLeft    -  Left Arrow\nRight  -  Right Arrow\n" }));
+                            label: "      Block Break\n\n         Controls\nMove Mouse\nor\nTouch Screen\n" }));
 
 		stage.insert(new Q.Pointer());
   		container.fit(20);
