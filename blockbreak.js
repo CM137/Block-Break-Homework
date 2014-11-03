@@ -117,7 +117,7 @@ $(function() {
   init: function(p) {
     this._super({
       label: "Score: 0",
-      x: 50,
+      x: 55,
       y: 10,
       color: "white",
       size:18
@@ -135,7 +135,7 @@ $(function() {
   init: function(p) {
     this._super({
       label: "Lives: 3",
-      x: Q.width - 40,
+      x: Q.width - 60,
       y: 10,
       color: "white",
       size:18
