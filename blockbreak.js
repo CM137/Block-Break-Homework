@@ -134,8 +134,8 @@ $(function() {
   Q.UI.Text.extend("Lives",{ 
   init: function(p) {
     this._super({
-      label: "Lives: 3",
-      x: Q.width - 60,
+      label: "Lives Remaining: 3",
+      x: Q.width - 80,
       y: 10,
       color: "white",
       size:18
@@ -193,7 +193,7 @@ $(function() {
   		}));  
          
   		var label = container.insert(new Q.UI.Text({x: 0, y: -30, color: "white",
-                            label: "      Block Break\n\n         Controls\nLeft    -  Left Arrow\nRight  -  Right Arrow\n" }));
+                            label: "      Block Break\n\n          Controls\nLeft     -  Left Arrow\nRight  -  Right Arrow\n" }));
 
   		container.fit(20);
   	});
