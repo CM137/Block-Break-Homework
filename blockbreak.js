@@ -28,8 +28,8 @@ $(function() {
       } else if(Q.inputs['right']) {
         this.p.x += dt * this.p.speed;
       }
-      if(this.p.x < this.w/2) { 
-        this.p.x = this.w/2;
+      if(this.p.x < this.p.w/2) { 
+        this.p.x = this.p.w/2;
       } else if(this.p.x > Q.width - this.p.w/2) { 
         this.p.x = Q.width - this.p.w/2;
       }
@@ -119,7 +119,8 @@ $(function() {
       label: "Score: 0",
       x: 10,
       y: 10,
-      color: "white"
+      color: "white",
+      size:18
     });
 
     Q.state.on("change.score",this,"score");
@@ -136,7 +137,8 @@ $(function() {
       label: "Lives: 3",
       x: Q.width,
       y: 10,
-      color: "white"
+      color: "white",
+      size:18
     });
 
     Q.state.on("change.lives",this,"lives");
@@ -166,7 +168,7 @@ $(function() {
       var blockCount=0;
       for(var x=0;x<6;x++) {
         for(var y=0;y<5;y++) {
-          stage.insert(new Q.Block({ x: x*50+30, y: y*30+20 }));
+          stage.insert(new Q.Block({ x: x*50+35, y: y*30+20 }));
           blockCount++;
         }
       }
