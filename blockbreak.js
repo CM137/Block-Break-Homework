@@ -145,7 +145,7 @@ $(function() {
   },
 
   lives: function(lives) {
-    this.p.label = "Lives: " + lives;
+    this.p.label = "Lives Remaining: " + lives;
   }
   });
 
@@ -203,13 +203,13 @@ $(function() {
    				 x: Q.width/2, y: Q.height/2, fill: "rgba(0,0,0,0.5)"
   		}));
 
-  		var button = container.insert(new Q.UI.Button({ x: 0, y: 70, fill: "#FFFFFF",
+  		var button = container.insert(new Q.UI.Button({ x: 0, y: 40, fill: "#FFFFFF",
                                                   label: "Play Again" },function() {
     	Q.clearStages();
    		Q.stageScene('game');
   		}));  
          
-  		var label = container.insert(new Q.UI.Text({x: 0, y: -30, color: "white",
+  		var label = container.insert(new Q.UI.Text({x: 0, y: -40, color: "white",
                             label: "You Lose!" }));
 
   		container.fit(20);
@@ -220,13 +220,13 @@ $(function() {
    				 x: Q.width/2, y: Q.height/2, fill: "rgba(0,0,0,0.5)"
   		}));
 
-  		var button = container.insert(new Q.UI.Button({ x: 0, y: 70, fill: "#FFFFFF",
+  		var button = container.insert(new Q.UI.Button({ x: 0, y: 40, fill: "#FFFFFF",
                                                   label: "Play Again" },function() {
     	Q.clearStages();
    		Q.stageScene('game');
   		}));  
          
-  		var label = container.insert(new Q.UI.Text({x: 0, y: -20, color: "white",
+  		var label = container.insert(new Q.UI.Text({x: 0, y: -40, color: "white",
                             label: "You Win!" }));
 
   		container.fit(20);
