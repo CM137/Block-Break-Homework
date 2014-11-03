@@ -4,6 +4,7 @@ $(function() {
                      .setup().touch().enableSound();
 
   Q.input.keyboardControls();
+  Q.input.mouseControls();
   Q.input.touchControls({ 
             controls:  [ ['left','<' ],[],[],[],['right','>' ] ]
   });
@@ -23,6 +24,7 @@ $(function() {
     },
 
     step: function(dt) {
+      this.p.x = Q.inputs['mouseX'];
       if(Q.inputs['left']) { 
         this.p.x -= dt * this.p.speed;
       } else if(Q.inputs['right']) {
@@ -193,7 +195,7 @@ $(function() {
   		}));  
          
   		var label = container.insert(new Q.UI.Text({x: 0, y: -30, color: "white",
-                            label: "      Block Break\n\n          Controls\nLeft    -  Left Arrow\nRight  -  Right Arrow\n" }));
+                            label: "      Block Break\n\n         Controls\nLeft    -  Left Arrow\nRight  -  Right Arrow\n" }));
 
   		container.fit(20);
   	});
