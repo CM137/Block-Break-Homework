@@ -48,17 +48,17 @@ $(function() {
 		  p.y += p.dy * p.speed * dt;
 
 		  if(p.x < 5) { 
-		  	Q.audio.play('wall.wav');
+		  	Q.audio.play('wall.mp3');
 			p.x = 5;
 			p.dx = 1;
 		  } else if(p.x > Q.width - 10) { 
-		  	Q.audio.play('wall.wav');
+		  	Q.audio.play('wall.mp3');
 			p.dx = -1;
 			p.x = Q.width - 10;
 		  }
 
 		  if(p.y < 10) {
-		  	Q.audio.play('wall.wav');
+		  	Q.audio.play('wall.mp3');
 			p.y = 10;
 			p.dy = 1;
 		  } else if(p.y > Q.height) { 
@@ -79,11 +79,11 @@ $(function() {
 	collision: function(col) {                // collision method
 		if (col.obj.isA("Paddle")) {
 //			alert("collision with paddle");
-			Q.audio.play('paddle.wav');
+			Q.audio.play('paddle.mp3');
 			this.p.dy = -1;
 		} else if (col.obj.isA("Block")) {
 //			alert("collision with block");
-			Q.audio.play('block.wav');
+			Q.audio.play('block.mp3');
 			Q.state.inc('score', 100);
 			col.obj.destroy();
 			this.p.dy *= -1;
@@ -167,7 +167,7 @@ $(function() {
   });
 
 //  Q.load(['blockbreak.png','blockbreak.json'], function() {
-  Q.load(['blockbreak.png', 'block.wav', 'paddle.wav', 'wall.wav'], function() {
+  Q.load(['blockbreak.png', 'block.mp3', 'paddle.mp3', 'wall.mp3'], function() {
     // Q.compileSheets('blockbreak.png','blockbreak.json');  
 	Q.sheet("ball", "blockbreak.png", { tilew: 20, tileh: 20, sy: 0, sx: 0 });
 	Q.sheet("block", "blockbreak.png", { tilew: 40, tileh: 20, sy: 20, sx: 0 });
