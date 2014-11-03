@@ -211,7 +211,13 @@ $(function() {
   		}));  
          
   		var label = container.insert(new Q.UI.Text({x: 0, y: -30, color: "white",
-                            label: "      Block Break\n\n         Controls\nMove Mouse\nor\nTouch Screen\n" }));
+                            label: "    Block Break", size: 48 }));
+        var label = container.insert(new Q.UI.Text({x: 0, y: -10, color: "white",
+                            label: "     Controls", size: 32 }));
+        var label = container.insert(new Q.UI.Text({x: 0, y: -5, color: "white",
+                            label: "    Move Mouse", size: 18 }));
+        var label = container.insert(new Q.UI.Text({x: 0, y: -5, color: "white",
+                            label: "Mobile: Touch Screen", size:18 }));
 
 		stage.insert(new Q.Pointer());
   		container.fit(20);
