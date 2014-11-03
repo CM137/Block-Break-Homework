@@ -1,7 +1,7 @@
 $(function() {
   var Q = window.Q = Quintus({ audioSupported: ['wav'] })
                      .include('Input,Sprites,Scenes,UI,Touch,Audio')
-                     .setup().touch().enableSound();
+                     .setup({ padding-top: 40px}).touch().enableSound();
 
   Q.input.keyboardControls();
   Q.input.touchControls({ 
@@ -117,7 +117,7 @@ $(function() {
   init: function(p) {
     this._super({
       label: "Score: 0",
-      x: 10,
+      x: 40,
       y: 10,
       color: "white",
       size:18
@@ -135,7 +135,7 @@ $(function() {
   init: function(p) {
     this._super({
       label: "Lives: 3",
-      x: Q.width,
+      x: Q.width - 30,
       y: 10,
       color: "white",
       size:18
@@ -168,7 +168,7 @@ $(function() {
       var blockCount=0;
       for(var x=0;x<6;x++) {
         for(var y=0;y<5;y++) {
-          stage.insert(new Q.Block({ x: x*50+35, y: y*30+20 }));
+          stage.insert(new Q.Block({ x: x*50+35, y: y*30+30 }));
           blockCount++;
         }
       }
