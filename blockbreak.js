@@ -28,9 +28,9 @@ $(function() {
       } else if(Q.inputs['right']) {
         this.p.x += dt * this.p.speed;
       }
-      if(this.p.x < 0) { 
-        this.p.x = 0;
-      } else if(this.p.x > Q.width - this.p.w) { 
+      if(this.p.x < 10) { 
+        this.p.x = 10;
+      } else if(this.p.x > Q.width - this.p.w + 10) { 
         this.p.x = Q.width - this.p.w;
       }
 //      this._super(dt);	      // no need for this call anymore
@@ -61,10 +61,10 @@ $(function() {
 		  	Q.audio.play('wall.wav');
 			p.x = 0;
 			p.dx = 1;
-		  } else if(p.x > Q.width - p.w) { 
+		  } else if(p.x > Q.width) { 
 		  	Q.audio.play('wall.wav');
 			p.dx = -1;
-			p.x = Q.width - p.w;
+			p.x = Q.width;
 		  }
 
 		  if(p.y < 0) {
@@ -117,7 +117,7 @@ $(function() {
   init: function(p) {
     this._super({
       label: "Score: 0",
-      x: 0,
+      x: 10,
       y: 10,
       color: "white"
     });
@@ -134,7 +134,7 @@ $(function() {
   init: function(p) {
     this._super({
       label: "Lives: 3",
-      x: Q.width - 10,
+      x: Q.width,
       y: 10,
       color: "white"
     });
@@ -166,7 +166,7 @@ $(function() {
       var blockCount=0;
       for(var x=0;x<6;x++) {
         for(var y=0;y<5;y++) {
-          stage.insert(new Q.Block({ x: x*50+10, y: y*30+10 }));
+          stage.insert(new Q.Block({ x: x*50+20, y: y*30+20 }));
           blockCount++;
         }
       }
