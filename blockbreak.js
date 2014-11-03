@@ -128,23 +128,17 @@ $(function() {
     step: function(dt) {
       this.p.x = Q.inputs['mouseX'];
       this.p.y = Q.inputs['mouseY'];
-      if(Q.inputs['left']) { 
-        this.p.x -= dt * this.p.speed;
-      } else if(Q.inputs['right']) {
-        this.p.x += dt * this.p.speed;
-      }
-      if(Q.inputs['mouseX'] < this.p.w/2) { 
+      if(Q.inputs['mouseX'] < this.p.w/2 + 5) { 
         this.p.x = -20;
-      } else if(Q.inputs['mouseX'] > Q.width - this.p.w/2) { 
+      } else if(Q.inputs['mouseX'] > Q.width - this.p.w/2 - 5) { 
         this.p.x = -20;
       }
       
-      if(Q.inputs['mouseY'] < 0) { 
+      if(Q.inputs['mouseY'] < 10) { 
         this.p.x = -20;
-      } else if(Q.inputs['mouseY'] > Q.height) { 
+      } else if(Q.inputs['mouseY'] > Q.height - 10) { 
         this.p.x = -20;
       }
-//      this._super(dt);	      // no need for this call anymore
     }
   });
   
