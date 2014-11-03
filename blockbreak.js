@@ -133,9 +133,15 @@ $(function() {
       } else if(Q.inputs['right']) {
         this.p.x += dt * this.p.speed;
       }
-      if(this.p.x < this.p.w/2) { 
+      if(Q.inputs['mouseX'] < this.p.w/2) { 
         this.p.x = -20;
-      } else if(this.p.x > Q.width - this.p.w/2) { 
+      } else if(Q.inputs['mouseX'] > Q.width - this.p.w/2) { 
+        this.p.x = -20;
+      }
+      
+      if(Q.inputs['mouseY'] < 0) { 
+        this.p.x = -20;
+      } else if(Q.inputs['mouseY'] > Q.height) { 
         this.p.x = -20;
       }
 //      this._super(dt);	      // no need for this call anymore
