@@ -211,9 +211,9 @@ $(function() {
   		}));  
          
   		var label = container.insert(new Q.UI.Text({x: -10, y: 30, color: "white",
-                            label: "    Block Break", size: 48 }));
+                            label: "Block Break", size: 48 }));
         var label1 = container.insert(new Q.UI.Text({x: -10, y: 105, color: "white",
-                            label: "     Controls", size: 32 }));
+                            label: "Controls", size: 32 }));
         var label2 = container.insert(new Q.UI.Text({x: -10, y: 135, color: "white",
                             label: "    Move Mouse", size: 18 }));
         var label3 = container.insert(new Q.UI.Text({x: -10, y: 155, color: "white",
