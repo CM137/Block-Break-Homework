@@ -201,7 +201,7 @@ $(function() {
 	
 	Q.scene('title',function(stage) {
   		var container = stage.insert(new Q.UI.Container({
-   				 x: Q.width/2, y: Q.height/2, fill: "rgba(0,0,0,0.5)"
+   				 x: Q.width/2, y: 0, fill: "rgba(0,0,0,0.5)"
   		}));
 
   		var button = container.insert(new Q.UI.Button({ x: 0, y: 70, fill: "#FFFFFF",
@@ -210,13 +210,13 @@ $(function() {
    		Q.stageScene('game');
   		}));  
          
-  		var label = container.insert(new Q.UI.Text({x: 0, y: -30, color: "white",
+  		var label = container.insert(new Q.UI.Text({x: 0, y: 5, color: "white",
                             label: "    Block Break", size: 48 }));
-        var label = container.insert(new Q.UI.Text({x: 0, y: -10, color: "white",
+        var label = container.insert(new Q.UI.Text({x: 0, y: 60, color: "white",
                             label: "     Controls", size: 32 }));
-        var label = container.insert(new Q.UI.Text({x: 0, y: -5, color: "white",
+        var label = container.insert(new Q.UI.Text({x: 0, y: 65, color: "white",
                             label: "    Move Mouse", size: 18 }));
-        var label = container.insert(new Q.UI.Text({x: 0, y: -5, color: "white",
+        var label = container.insert(new Q.UI.Text({x: 0, y: 75, color: "white",
                             label: "Mobile: Touch Screen", size:18 }));
 
 		stage.insert(new Q.Pointer());
@@ -228,7 +228,7 @@ $(function() {
    				 x: Q.width/2, y: Q.height/2, fill: "rgba(0,0,0,0.5)"
   		}));
 
-  		var button = container.insert(new Q.UI.Button({ x: 0, y: 40, fill: "#FFFFFF",
+  		var button = container.insert(new Q.UI.Button({ x: 0, y: 85, fill: "#FFFFFF",
                                                   label: "Play Again" },function() {
     	Q.clearStages();
    		Q.stageScene('game');
