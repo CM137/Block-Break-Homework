@@ -134,8 +134,8 @@ $(function() {
   Q.UI.Text.extend("Lives",{ 
   init: function(p) {
     this._super({
-      label: "Lives Remaining: 3",
-      x: Q.width - 80,
+      label: "Lives Remaining: 2",
+      x: Q.width - 85,
       y: 10,
       color: "white",
       size:18
@@ -159,7 +159,7 @@ $(function() {
 	Q.state.set("lives", 3);
 				 		 
     Q.scene('game',new Q.Scene(function(stage) {
-      Q.state.reset({ score: 0, lives: 3 });
+      Q.state.reset({ score: 0, lives: 2 });
       stage.insert(new Q.Paddle());
       stage.insert(new Q.Ball());
       stage.insert(new Q.Score());
@@ -193,7 +193,7 @@ $(function() {
   		}));  
          
   		var label = container.insert(new Q.UI.Text({x: 0, y: -30, color: "white",
-                            label: "      Block Break\n\n          Controls\nLeft     -  Left Arrow\nRight  -  Right Arrow\n" }));
+                            label: "      Block Break\n\n          Controls\nLeft    -  Left Arrow\nRight  -  Right Arrow\n" }));
 
   		container.fit(20);
   	});
