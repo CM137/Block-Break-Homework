@@ -228,9 +228,9 @@ $(function() {
         var label1 = container.insert(new Q.UI.Text({x: -10, y: 210, color: "white",
                             label: "  Controls", size: 32 }));
         var label2 = container.insert(new Q.UI.Text({x: -10, y: 245, color: "white",
-                            label: "Move Mouse or Arrow Keys", size: 18 }));
+                            label: " Move Mouse or Arrow Keys", size: 18 }));
         var label3 = container.insert(new Q.UI.Text({x: -10, y: 265, color: "white",
-                            label: "  Mobile: Touch Screen", size:18 }));
+                            label: "   Mobile: Touch Screen", size:18 }));
 
 		stage.insert(new Q.Pointer());
   		container.fit(20);
